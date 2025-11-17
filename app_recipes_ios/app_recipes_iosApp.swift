@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-@main
+@main //point d'entrée de l'app
 struct app_recipes_iosApp: App {
     var body: some Scene {
-        WindowGroup {
-            ContentView()
+        WindowGroup { //représente une fenêtre de l'application
+            ContentView()//la vue
         }
     }
 }
