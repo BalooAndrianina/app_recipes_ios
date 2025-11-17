@@ -11,7 +11,7 @@ import SwiftUI
 struct app_recipes_iosApp: App {
     var body: some Scene {
         WindowGroup { //représente une fenêtre de l'application
-            ContentView()//la vue
+            ContentView()
         }
     }
 }
