@@ -1,0 +1,17 @@
+//
+//  app_recipes_iosApp.swift
+//  app_recipes_ios
+//
+//  Created by Andriantsialonina on 17/11/2025.
+//
+
+import SwiftUI
+
+@main
+struct app_recipes_iosApp: App {
+    var body: some Scene {
+        WindowGroup {
+            ContentView()
+        }
+    }
+}

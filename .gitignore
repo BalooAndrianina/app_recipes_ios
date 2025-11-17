@@ -1,0 +1,33 @@
+# ================================
+# Xcode
+# ================================
+
+# Fichiers temporaires utilisateur Xcode
+*.xcuserstate
+*.xccheckout
+*.xcscmblueprint
+*.xcworkspace/xcuserdata/
+*.xcodeproj/xcuserdata/
+
+# Dossiers de build
+build/
+DerivedData/
+
+# ================================
+# Swift Package Manager
+# ================================
+/.build/
+/Packages/
+
+# ================================
+# Archives et produits compilés
+# ================================
+*.ipa
+*.dSYM.zip
+*.app.dSYM
+
+# ================================
+# Symbolicated crash logs
+# ================================
+*.crash
+*.plist
