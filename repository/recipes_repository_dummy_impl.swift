@@ -1,0 +1,18 @@
+//
+//  recipes_repository_dummy_impl.swift
+//  app_recipes_ios
+//
+//  Created by Andriantsialonina on 17/11/2025.
+//
+
+import Foundation
+
+class RecipesRepositoryDummyImpl : RecipesRepository {
+    private(set) var recipes = [
+        Recipe(photo_name : "simple-white-cake", name : "Simple Cake", prep_time : 10, cook_time : 30, serving : 12, ingredients : [Ingredient(name : "sucre", quantity : 200, unit : "g" ), Ingredient(name : "beurre", quantity : 125, unit : "g" ), Ingredient(name : "oeufs" , quantity : 2, unit : " " ), Ingredient(name : "farine", quantity : 200, unit : "g" ), Ingredient(name : "levure", quantity : 10, unit : "g" ), Ingredient(name : "lait", quantity : 12.5, unit : "cl" )], directions : "Fais crémer 120 g de beurre mou avec 150 g de sucre jusqu’à obtenir une texture légère. Incorpore deux œufs un à un, puis ajoute une cuillère à café d’extrait de vanille. Mélange 200 g de farine avec une cuillère et demie de levure chimique et une pincée de sel, puis ajoute-les progressivement à la préparation. Verse ensuite 120 ml de lait pour obtenir une pâte lisse. Transfère la pâte dans un moule beurré. Fais cuire à 180 °C pendant environ vingt-cinq à trente minutes. Laisse refroidir avant de découper ou garnir."),
+        
+        Recipe(photo_name : "chocolate-cake", name : "Chocolate Cake", prep_time : 15, cook_time : 25, serving : 8, ingredients : [Ingredient(name : "sucre", quantity : 200, unit : "g" ), Ingredient(name : "beurre", quantity : 125, unit : "g" ), Ingredient(name : "oeufs" , quantity : 4, unit : " " ), Ingredient(name : "farine", quantity : 125, unit : "g" ), Ingredient(name : "levure", quantity : 5, unit : "g" ), Ingredient(name : "chocolate", quantity : 200, unit : "g" )], directions : "Fais fondre 200 g de chocolat noir avec 100 g de beurre. Dans un saladier, bats trois œufs avec 100 g de sucre jusqu’à ce que le mélange devienne mousseux. Ajoute ensuite 80 g de farine. Incorpore le chocolat fondu puis mélange jusqu’à obtenir une pâte bien lisse. Verse la préparation dans un moule beurré ou tapissé de papier cuisson. Fais cuire au four à 180 °C pendant environ vingt à vingt-cinq minutes. Laisse tiédir avant de démouler pour un gâteau fondant et savoureux."),
+        
+        Recipe(photo_name : "clafoutis", name : "Clafoutis", prep_time : 15, cook_time : 25, serving : 8, ingredients : [Ingredient(name : "sucre", quantity : 180, unit : "g" ), Ingredient(name : "poires", quantity : 6, unit : " " ), Ingredient(name : "oeufs" , quantity : 6, unit : " " ), Ingredient(name : "farine", quantity : 125, unit : "g" ), Ingredient(name : "crème liquide", quantity : 50, unit : "cl" ), Ingredient(name : "lait", quantity : 25, unit : "cl" ), Ingredient(name : "beurre", quantity : 10, unit : "cl" )], directions : "Fais fondre 200 g de chocolat noir avec 100 g de beurre. Dans un saladier, bats trois œufs avec 100 g de sucre jusqu’à ce que le mélange devienne mousseux. Ajoute ensuite 80 g de farine. Incorpore le chocolat fondu puis mélange jusqu’à obtenir une pâte bien lisse. Verse la préparation dans un moule beurré ou tapissé de papier cuisson. Fais cuire au four à 180 °C pendant environ vingt à vingt-cinq minutes. Laisse tiédir avant de démouler pour un gâteau fondant et savoureux.")
+    ]
+}

@@ -8,6 +8,6 @@ import Foundation
 
 struct Ingredient{
     var name : String
-    var quantity : Int
+    var quantity : Float
     var unit : String
 }
