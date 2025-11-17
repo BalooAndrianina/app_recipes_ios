@@ -10,6 +10,6 @@ import Foundation
  protocol qui expose la liste de recipes en lecture.
  réalisé pendant les implantations de RecipesRepository
 */
-protocol RecipesRepository{
+protocol RecipesRepository: ObservableObject{
     var recipes: [Recipe] { get }
 }

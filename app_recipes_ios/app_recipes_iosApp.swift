@@ -11,7 +11,9 @@ import SwiftUI
 struct app_recipes_iosApp: App {
     var body: some Scene {
         WindowGroup { //représente une fenêtre de l'application
-            RecipesListView()
+            NavigationStack{
+                RecipesListView()
+            }
         }
     }
 }

@@ -9,16 +9,15 @@ import Foundation
 import SwiftUI
 
 struct RecipesListView : View { //protocole view
-    let repository = Injector.recipesRepository
-    @State private var onlyMissingProducts = false
+    @StateObject var repository = Injector.recipesRepository
     
     var body: some View{
         VStack{
             Text("Recipes")
                 .font(.title)
-            List(repository.recipes){ recipe in
-                if !onlyMissingProducts{
-                    RecipeView(recipe: recipe)
+            List($repository.recipes){ $recipe in
+                NavigationLink(destination: RecipeDetailsView(recipe: $recipe)){
+                    RecipeView(recipe: $recipe)
                         .listRowSeparator(.hidden)
                 }
             }
