@@ -21,6 +21,7 @@ struct RecipeView : View { //protocole view
                 .scaledToFill()
                 .frame(width: textHeight,height: textHeight)
                 .clipped()
+                .cornerRadius(5)
 
             VStack(alignment: .leading, spacing: 4) {
                 Text(recipe.name)
@@ -33,7 +34,8 @@ struct RecipeView : View { //protocole view
             }
             .frame(maxWidth : .infinity, alignment: .leading)
             .padding(8)
-            .background(Color.brown.opacity(0.3))
+            .background(Color.yellow.opacity(0.3))
+            .cornerRadius(5)
             .overlay(
                 //on va récupérer la hauteur des textes pour pouvoir créer une image carrée avec la même hauteur
                 GeometryReader { geo in
@@ -43,9 +45,7 @@ struct RecipeView : View { //protocole view
                         }
                 }
             )
-
         }
-        .padding()
     }
 }
 

@@ -6,7 +6,8 @@
 //
 import Foundation
 
-struct Recipe {
+struct Recipe: Identifiable {
+    let id = UUID()
     var photo_name : String
     var name : String
     var prep_time : Int

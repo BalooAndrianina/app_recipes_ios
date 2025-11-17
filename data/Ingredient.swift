@@ -6,7 +6,8 @@
 //
 import Foundation
 
-struct Ingredient{
+struct Ingredient: Identifiable{
+    let id = UUID()
     var name : String
     var quantity : Float
     var unit : String
