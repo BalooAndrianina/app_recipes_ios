@@ -13,8 +13,6 @@ struct RecipesListView : View { //protocole view
     
     var body: some View{
         VStack{
-            Text("Recipes")
-                .font(.title)
             List($repository.recipes){ $recipe in
                 NavigationLink(destination: RecipeDetailsView(recipe: $recipe)){
                     RecipeView(recipe: $recipe)
@@ -22,6 +20,8 @@ struct RecipesListView : View { //protocole view
                 .listRowSeparator(.hidden)
             }
             .listStyle(.plain)
+            .navigationTitle("Recipes")
+            .navigationBarTitleDisplayMode(.large)
         }
     }
 }

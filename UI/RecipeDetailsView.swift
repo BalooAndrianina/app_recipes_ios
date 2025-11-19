@@ -13,65 +13,84 @@ struct RecipeDetailsView : View {
     @Binding var recipe : Recipe
     
     var body: some View {
-        VStack{
-            HStack{
-                VStack(alignment : .leading){
-                    Text("Prep Time : \(recipe.prep_time) mins")
-                    Text("Cook Time : \(recipe.cook_time) mins")
-                }
-                
-                Spacer()
-                
-                Button("Edit recipe"){
-                }
-                .buttonStyle(.bordered)
-                .background(Color.yellow.opacity(0.3))
-                }
-            
-            HStack{
-                Text("Serving : ")
-                Text("\(recipe.serving)")
-                
-                Spacer()
+        ScrollView{
+            VStack(spacing: 30){
                 HStack{
-                    Button("-"){
-                        recipe.serving -= 1
+                    VStack(alignment : .leading){
+                        Text("Prep Time : \(recipe.prep_time) mins")
+                        Text("Cook Time : \(recipe.cook_time) mins")
                     }
-                    .padding(.horizontal, 15)
-                    .disabled(recipe.serving <= 0)
                     
-                    Divider().frame(height: 30).background(Color.gray)
+                    Spacer()
                     
-                    Button("+"){
-                        recipe.serving += 1
+                    Button("Edit recipe"){
                     }
-                    .padding(.horizontal, 15)
+                    .buttonStyle(.bordered)
+                    .background(Color.yellow.opacity(0.3))
+                    }
+                
+                HStack{
+                    Text("Serving : ")
+                    Text("\(recipe.serving)")
+                    
+                    Spacer()
+                    HStack{
+                        Button("-"){
+                            recipe.serving -= 1
+                        }
+                        .padding(.horizontal, 15)
+                        .disabled(recipe.serving <= 1)
+                        
+                        Divider().frame(height: 30).background(Color.gray)
+                        
+                        Button("+"){
+                            recipe.serving += 1
+                        }
+                        .padding(.horizontal, 15)
+                    }
+                    .background(Color.yellow.opacity(0.3))
+                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                    Spacer()
                 }
-                .background(Color.yellow.opacity(0.3))
-                .clipShape(RoundedRectangle(cornerRadius: 10))
-                Spacer()
-            }
-            GeometryReader { geo in
-                Image(recipe.photo_name)
+                    Image(recipe.photo_name)
                     .resizable()
                     .scaledToFill()
-                    .frame(
-                        width: geo.size.width * 0.95,
-                        height: geo.size.width * 0.8
-                    )
+                    .frame(width: 350,height: 350)
                     .clipped()
                     .cornerRadius(5)
-                    .frame(maxWidth: .infinity)
-            }
         
+                VStack(alignment : .leading){
+                    Text("Ingredients")
+                        .font(.system(size: 20, weight: .semibold))
+                    ForEach(recipe.ingredients){ ingredient in
+                        HStack{
+                            Text("\(ingredient.name) ")
+                            if ingredient.unit != "g" && ingredient.unit != "cl" {
+                                Text("\(Int(ceil(ingredient.quantity)))")
 
-            
-            Spacer()
+                            }
+                            else {
+                                Text(String(format: "%.1f %@", ingredient.quantity, ingredient.unit))
+                            }
+                        }
+                    }
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                
+                VStack(alignment : .leading){
+                    Text("Directions")
+                        .font(.system(size: 20, weight: .semibold))
+                    Text(recipe.directions)
+                        
+                    
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+
+            }
+            .padding()
+            .navigationTitle(recipe.name)
+            .navigationBarTitleDisplayMode(.large)
         }
-        .padding()
-        .frame(maxWidth : .infinity, alignment: .leading)
-        .navigationTitle(recipe.name)
-        .navigationBarTitleDisplayMode(.large)
     }
 }
 
