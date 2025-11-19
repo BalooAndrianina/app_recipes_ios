@@ -19,12 +19,56 @@ struct RecipeDetailsView : View {
                     Text("Prep Time : \(recipe.prep_time) mins")
                     Text("Cook Time : \(recipe.cook_time) mins")
                 }
+                
+                Spacer()
+                
                 Button("Edit recipe"){
                 }
                 .buttonStyle(.bordered)
                 .background(Color.yellow.opacity(0.3))
+                }
+            
+            HStack{
+                Text("Serving : ")
+                Text("\(recipe.serving)")
+                
+                Spacer()
+                HStack{
+                    Button("-"){
+                        recipe.serving -= 1
+                    }
+                    .padding(.horizontal, 15)
+                    .disabled(recipe.serving <= 0)
+                    
+                    Divider().frame(height: 30).background(Color.gray)
+                    
+                    Button("+"){
+                        recipe.serving += 1
+                    }
+                    .padding(.horizontal, 15)
+                }
+                .background(Color.yellow.opacity(0.3))
+                .clipShape(RoundedRectangle(cornerRadius: 10))
+                Spacer()
             }
+            GeometryReader { geo in
+                Image(recipe.photo_name)
+                    .resizable()
+                    .scaledToFill()
+                    .frame(
+                        width: geo.size.width * 0.95,
+                        height: geo.size.width * 0.8
+                    )
+                    .clipped()
+                    .cornerRadius(5)
+                    .frame(maxWidth: .infinity)
+            }
+        
+
+            
+            Spacer()
         }
+        .padding()
         .frame(maxWidth : .infinity, alignment: .leading)
         .navigationTitle(recipe.name)
         .navigationBarTitleDisplayMode(.large)
