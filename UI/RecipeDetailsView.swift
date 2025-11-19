@@ -20,7 +20,6 @@ struct RecipeDetailsView : View {
                     Text("Cook Time : \(recipe.cook_time) mins")
                 }
                 Button("Edit recipe"){
-                    
                 }
                 .buttonStyle(.bordered)
                 .background(Color.yellow.opacity(0.3))

@@ -18,8 +18,8 @@ struct RecipesListView : View { //protocole view
             List($repository.recipes){ $recipe in
                 NavigationLink(destination: RecipeDetailsView(recipe: $recipe)){
                     RecipeView(recipe: $recipe)
-                        .listRowSeparator(.hidden)
                 }
+                .listRowSeparator(.hidden)
             }
             .listStyle(.plain)
         }
