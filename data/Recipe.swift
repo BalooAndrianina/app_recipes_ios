@@ -13,6 +13,7 @@ struct Recipe: Identifiable {
     var prep_time : Int
     var cook_time : Int
     var serving : Int
+    var base_serving : Int
     var ingredients : [Ingredient]
     var directions : String
 }

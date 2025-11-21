@@ -63,14 +63,18 @@ struct RecipeDetailsView : View {
                     Text("Ingredients")
                         .font(.system(size: 20, weight: .semibold))
                     ForEach(recipe.ingredients){ ingredient in
+                        
+                        //modifier les quantité en fonction du nombre de part
+                        let newQuantity = ingredient.quantity * Float(recipe.serving) / Float(recipe.base_serving)
+                        
                         HStack{
                             Text("\(ingredient.name) ")
                             if ingredient.unit != "g" && ingredient.unit != "cl" {
-                                Text("\(Int(ceil(ingredient.quantity)))")
+                                Text("\(Int(ceil(newQuantity)))")
 
                             }
                             else {
-                                Text(String(format: "%.1f %@", ingredient.quantity, ingredient.unit))
+                                Text(String(format: "%.1f %@", newQuantity, ingredient.unit))
                             }
                         }
                     }
@@ -95,7 +99,7 @@ struct RecipeDetailsView : View {
 }
 
 #Preview {
-    RecipeDetailsView(recipe: .constant(Recipe(photo_name : "clafoutis", name : "Clafoutis", prep_time : 15, cook_time : 25, serving : 8, ingredients : [Ingredient(name : "sucre", quantity : 180, unit : "g" ), Ingredient(name : "poires", quantity : 6, unit : " " ), Ingredient(name : "oeufs" , quantity : 6, unit : " " ), Ingredient(name : "farine", quantity : 125, unit : "g" ), Ingredient(name : "crème liquide", quantity : 50, unit : "cl" ), Ingredient(name : "lait", quantity : 25, unit : "cl" ), Ingredient(name : "beurre", quantity : 10, unit : "cl" )], directions : "Fais fondre 200 g de chocolat noir avec 100 g de beurre. Dans un saladier, bats trois œufs avec 100 g de sucre jusqu’à ce que le mélange devienne mousseux. Ajoute ensuite 80 g de farine. Incorpore le chocolat fondu puis mélange jusqu’à obtenir une pâte bien lisse. Verse la préparation dans un moule beurré ou tapissé de papier cuisson. Fais cuire au four à 180 °C pendant environ vingt à vingt-cinq minutes. Laisse tiédir avant de démouler pour un gâteau fondant et savoureux.")))
+    RecipeDetailsView(recipe: .constant(Recipe(photo_name : "clafoutis", name : "Clafoutis", prep_time : 15, cook_time : 25, serving : 8,base_serving: 8, ingredients : [Ingredient(name : "sucre", quantity : 180, unit : "g" ), Ingredient(name : "poires", quantity : 6, unit : " " ), Ingredient(name : "oeufs" , quantity : 6, unit : " " ), Ingredient(name : "farine", quantity : 125, unit : "g" ), Ingredient(name : "crème liquide", quantity : 50, unit : "cl" ), Ingredient(name : "lait", quantity : 25, unit : "cl" ), Ingredient(name : "beurre", quantity : 10, unit : "cl" )], directions : "Fais fondre 200 g de chocolat noir avec 100 g de beurre. Dans un saladier, bats trois œufs avec 100 g de sucre jusqu’à ce que le mélange devienne mousseux. Ajoute ensuite 80 g de farine. Incorpore le chocolat fondu puis mélange jusqu’à obtenir une pâte bien lisse. Verse la préparation dans un moule beurré ou tapissé de papier cuisson. Fais cuire au four à 180 °C pendant environ vingt à vingt-cinq minutes. Laisse tiédir avant de démouler pour un gâteau fondant et savoureux.")))
 }
 
 
