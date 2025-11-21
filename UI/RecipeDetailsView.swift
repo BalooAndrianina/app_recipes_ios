@@ -23,11 +23,13 @@ struct RecipeDetailsView : View {
                     
                     Spacer()
                     
-                    Button("Edit recipe"){
+                    NavigationLink(destination: RecipeEditView(recipe: $recipe)) {
+                        Text("Edit recipe")
                     }
                     .buttonStyle(.bordered)
                     .background(Color.yellow.opacity(0.3))
-                    }
+
+                }
                 
                 HStack{
                     Text("Serving : ")

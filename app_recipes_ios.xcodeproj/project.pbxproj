@@ -21,6 +21,8 @@
 		7824F9392ECB3B21002FF4E5 /* RecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7824F9382ECB3B21002FF4E5 /* RecipeView.swift */; };
 		7824F93B2ECB4E74002FF4E5 /* RecipesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7824F93A2ECB4E74002FF4E5 /* RecipesListView.swift */; };
 		7824F93D2ECB61B3002FF4E5 /* RecipeDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7824F93C2ECB61B3002FF4E5 /* RecipeDetailsView.swift */; };
+		786886242ED05C9F00B4F5A7 /* RecipeEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786886232ED05C9F00B4F5A7 /* RecipeEditView.swift */; };
+		786886262ED0616100B4F5A7 /* EditFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786886252ED0616100B4F5A7 /* EditFieldView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,8 @@
 		7824F9382ECB3B21002FF4E5 /* RecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeView.swift; sourceTree = "<group>"; };
 		7824F93A2ECB4E74002FF4E5 /* RecipesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesListView.swift; sourceTree = "<group>"; };
 		7824F93C2ECB61B3002FF4E5 /* RecipeDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsView.swift; sourceTree = "<group>"; };
+		786886232ED05C9F00B4F5A7 /* RecipeEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeEditView.swift; sourceTree = "<group>"; };
+		786886252ED0616100B4F5A7 /* EditFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFieldView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +172,8 @@
 				7824F9382ECB3B21002FF4E5 /* RecipeView.swift */,
 				7824F93A2ECB4E74002FF4E5 /* RecipesListView.swift */,
 				7824F93C2ECB61B3002FF4E5 /* RecipeDetailsView.swift */,
+				786886232ED05C9F00B4F5A7 /* RecipeEditView.swift */,
+				786886252ED0616100B4F5A7 /* EditFieldView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -302,6 +308,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				786886242ED05C9F00B4F5A7 /* RecipeEditView.swift in Sources */,
 				7824F9312ECB2E2E002FF4E5 /* RecipesRepository.swift in Sources */,
 				7824F92D2ECB2951002FF4E5 /* Ingredient.swift in Sources */,
 				7824F92B2ECB25DA002FF4E5 /* Recipe.swift in Sources */,
@@ -310,6 +317,7 @@
 				7824F9332ECB2EDC002FF4E5 /* RecipesRepositoryDummyImpl.swift in Sources */,
 				7824F9002ECB1746002FF4E5 /* app_recipes_iosApp.swift in Sources */,
 				7824F9392ECB3B21002FF4E5 /* RecipeView.swift in Sources */,
+				786886262ED0616100B4F5A7 /* EditFieldView.swift in Sources */,
 				7824F9352ECB38B5002FF4E5 /* Injector.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
